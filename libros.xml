@@ -35,10 +35,10 @@
 			<filename>access.xml</filename>
 			<filename>config.xml</filename>
 			<filename>controller.php</filename>
-			<filename>libro.php</filename>
+			<filename>libros.php</filename>
 			<folder>controllers</folder>
 			<folder>helpers</folder>
-                        <folder>languages</folder>
+                        <folder>language</folder>
 			<folder>models</folder>
 			<folder>sql</folder>
 			<folder>tables</folder>
