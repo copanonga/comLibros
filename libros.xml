@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+	<name>com_libros</name>
+	<author>Jose</author>
+	<creationDate>2018/05/28</creationDate>
+	<copyright>(C) All rights reserved.
+	</copyright>
+	<license>GNU General Public License</license>
+	<authorEmail>mail@mail.mail</authorEmail>
+	<authorUrl>www.dominio.es</authorUrl>
+	<version>1.0.0</version>
+	<description>COM_LIBROS_XML_DESCRIPTION</description>
+
+	<scriptfile>script.php</scriptfile>
+
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+ 
+	<files folder="site">
+		<filename>index.html</filename>
+	</files>
+	<administration>
+		<menu img="class:categories">COM_LIBROS_MENU</menu>
+		
+		<files folder="admin">
+			<filename>index.html</filename>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>libro.php</filename>
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+                        <folder>languages</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+		</files>
+ 
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB/en-GB.com_libros.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_libros.sys.ini</language>
+		</languages>
+	</administration>
+</extension>
