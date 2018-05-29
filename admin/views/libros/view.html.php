@@ -3,39 +3,43 @@ defined('_JEXEC') or die;
 
 class LibrosViewLibros extends JViewLegacy
 {
-	protected $items;
+    protected $items;
 
-	public function display($tpl = null)
-	{
-            $this->items = $this->get('Items');
+    public function display($tpl = null)
+    {
+        $this->items = $this->get('Items');
 
-            if (count($errors = $this->get('Errors')))
-            {
-                JError::raiseError(500, implode("\n", $errors));
-                return false;
-            }
+        $funciones = new Funciones();
+        $funciones->mostrarZona(__CLASS__,__METHOD__,$this->items0);
 
-            $this->addToolbar();
-            parent::display($tpl);
-	}
+        if (count($errors = $this->get('Errors')))
+        {
+            JError::raiseError(500, implode("\n", $errors));
+            return false;
+        }
 
-	protected function addToolbar()
-	{
-            $canDo	= LibrosHelper::getActions();
-            $bar = JToolBar::getInstance('toolbar');
+        $this->addToolbar();
+        parent::display($tpl);
+    }
 
-            JToolbarHelper::title(JText::_('COM_LIBROS_MANAGER_LIBROS'), '');
+    protected function addToolbar()
+    {
+        $canDo	= LibrosHelper::getActions();
+        $bar = JToolBar::getInstance('toolbar');
 
-            JToolbarHelper::addNew('libro.add');
+        JToolbarHelper::title(JText::_('COM_LIBROS_MANAGER_LIBROS'), '');
 
-            if ($canDo->get('core.edit'))
-            {
-                JToolbarHelper::editList('libro.edit');
-            }
-            
-            if ($canDo->get('core.admin'))
-            {
-                JToolbarHelper::preferences('com_libros');
-            }
-	}
+        JToolbarHelper::addNew('libro.add');
+
+        if ($canDo->get('core.edit'))
+        {
+            JToolbarHelper::editList('libro.edit');
+        }
+
+        if ($canDo->get('core.admin'))
+        {
+            JToolbarHelper::preferences('com_libros');
+        }
+    }
+    
 }

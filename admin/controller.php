@@ -10,8 +10,6 @@ class LibrosController extends JControllerLegacy
 
         require_once JPATH_COMPONENT.'/helpers/libro.php';
 
-        $this->mostrarZona(__CLASS__,__METHOD__);
-
         $view   = $this->input->get('view', 'libros');
         $layout = $this->input->get('layout', 'default');
         $id     = $this->input->getInt('id');
@@ -28,17 +26,6 @@ class LibrosController extends JControllerLegacy
         parent::display();
 
         return $this;
-
-    }
-
-    function mostrarZona($clase,$metodo){
-
-        if (JRequest::getVar( 'DEBUG') == JRequest::getVar( 'ACTIVAR_DEBUG')) {
-            echo "------------------------- <br> ";
-            echo "Clase: ". $clase ." <br>";
-            echo "Método: ". $metodo ." <br>";
-            echo "------------------------- <br> ";
-        }
 
     }
         
