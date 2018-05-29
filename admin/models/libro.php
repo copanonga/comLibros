@@ -5,7 +5,7 @@ class LibrosModelLibro extends JModelAdmin
 {
 	protected $text_prefix = 'COM_LIBROS';
 
-	public function getTable($type = 'Libro', $prefix = 'LibroTable', $config = array())
+	public function getTable($type = 'Libro', $prefix = 'LibrosTable', $config = array())
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}
