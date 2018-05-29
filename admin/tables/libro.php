@@ -20,7 +20,6 @@ class LibrosTableLibro extends JTable
     {
         Funciones::mostrarZona(__CLASS__,__METHOD__,"Store",1);
         Funciones::mostrarZona(__CLASS__,__METHOD__,$updateNulls,0);
-        die;
         return parent::store($updateNulls);
     }
         
