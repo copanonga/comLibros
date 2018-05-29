@@ -3,40 +3,56 @@ defined('_JEXEC') or die;
 
 class LibrosModelLibro extends JModelAdmin
 {
-	protected $text_prefix = 'COM_LIBROS';
+    protected $text_prefix = 'COM_LIBROS';
 
-	public function getTable($type = 'Libro', $prefix = 'LibrosTable', $config = array())
-	{
-		return JTable::getInstance($type, $prefix, $config);
-	}
+    public function getTable($type = 'Libro', $prefix = 'LibrosTable', $config = array())
+    {
 
-	public function getForm($data = array(), $loadData = true)
-	{
-		$app = JFactory::getApplication();
+        Funciones::mostrarZona(__CLASS__,__METHOD__,$type,1);
+        Funciones::mostrarZona(__CLASS__,__METHOD__,$prefix,0);
+        Funciones::mostrarZona(__CLASS__,__METHOD__,$config,0);
 
-		$form = $this->loadForm('com_libro.libro', 'libro', array('control' => 'jform', 'load_data' => $loadData));
-		if (empty($form))
-		{
-			return false;
-		}
+        return JTable::getInstance($type, $prefix, $config);
+        
+    }
 
-		return $form;
-	}
+    public function getForm($data = array(), $loadData = true)
+    {
 
-	protected function loadFormData()
-	{
-		$data = JFactory::getApplication()->getUserState('com_libros.edit.libro.data', array());
+        $app = JFactory::getApplication();
 
-		if (empty($data))
-		{
-			$data = $this->getItem();
-		}
+        $form = $this->loadForm('com_libro.libro', 'libro', array('control' => 'jform', 'load_data' => $loadData));
+        if (empty($form))
+        {
+                return false;
+        }
+        
+        //Funciones::mostrarZona(__CLASS__,__METHOD__,$form,1);
 
-		return $data;
-	}
+        return $form;
+    }
 
-	protected function prepareTable($table)
-	{
-		$table->title		= htmlspecialchars_decode($table->title, ENT_QUOTES);
-	}
+    protected function loadFormData()
+    {
+
+        $data = JFactory::getApplication()->getUserState('com_libros.edit.libro.data', array());
+
+        if (empty($data))
+        {
+                $data = $this->getItem();
+        }
+
+        Funciones::mostrarZona(__CLASS__,__METHOD__,$data,0);
+        
+        return $data;
+    }
+
+    protected function prepareTable($table)
+    {
+
+        $table->title = htmlspecialchars_decode($table->title, ENT_QUOTES);
+        Funciones::mostrarZona(__CLASS__,__METHOD__,$table->title,1);
+        
+    }
+        
 }

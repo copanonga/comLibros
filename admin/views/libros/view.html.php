@@ -3,15 +3,18 @@ defined('_JEXEC') or die;
 
 class LibrosViewLibros extends JViewLegacy
 {
+    
     protected $items;
 
     public function display($tpl = null)
     {
+
+        Funciones::mostrarZona(__CLASS__,__METHOD__,"Display",1);
+        
         $this->items = $this->get('Items');
 
-        $funciones = new Funciones();
-        $funciones->mostrarZona(__CLASS__,__METHOD__,$this->items0);
-
+        Funciones::mostrarZona(__CLASS__,__METHOD__,$this->items,1);
+        
         if (count($errors = $this->get('Errors')))
         {
             JError::raiseError(500, implode("\n", $errors));
@@ -24,6 +27,7 @@ class LibrosViewLibros extends JViewLegacy
 
     protected function addToolbar()
     {
+
         $canDo	= LibrosHelper::getActions();
         $bar = JToolBar::getInstance('toolbar');
 
@@ -41,5 +45,5 @@ class LibrosViewLibros extends JViewLegacy
             JToolbarHelper::preferences('com_libros');
         }
     }
-    
+        
 }
