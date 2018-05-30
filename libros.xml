@@ -35,6 +35,7 @@
 			<filename>access.xml</filename>
 			<filename>config.xml</filename>
 			<filename>controller.php</filename>
+                        <filename>funciones.php</filename>
 			<filename>libros.php</filename>
 			<folder>controllers</folder>
 			<folder>helpers</folder>
