@@ -9,8 +9,10 @@ class LibrosModelLibros extends JModelList
         if (empty($config['filter_fields']))
         {
             $config['filter_fields'] = array(
-                    'id', 'a.id',
-                    'title', 'a.title',
+                'id', 'a.id',
+                'title', 'a.title',
+                'state', 'a.state',
+                'company', 'a.company'
             );
         }
         
@@ -30,8 +32,9 @@ class LibrosModelLibros extends JModelList
 
         $query->select(
             $this->getState(
-                    'list.select',
-                    'a.id, a.title'
+                'list.select',
+                'a.id, a.title' ,
+                'a.state, a.company'
             )
         );
         $query->from($db->quoteName('#__libros').' AS a');
