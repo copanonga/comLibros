@@ -14,6 +14,9 @@ class LibrosController extends JControllerLegacy
         $layout = $this->input->get('layout', 'default');
         $id     = $this->input->getInt('id');
 
+        $funciones = new Funciones();
+        $funciones->mostrarZona(__CLASS__,__METHOD__,"",1);
+
         if ($view == 'libro' && $layout == 'edit' && !$this->checkEditId('com_libros.edit.libro', $id))
         {
             $this->setError(JText::sprintf('JLIB_APPLICATION_ERROR_UNHELD_ID', $id));

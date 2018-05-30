@@ -1,5 +1,6 @@
 <?php
 defined('_JEXEC') or die;
+require_once 'funciones.php';
 
 if (!JFactory::getUser()->authorise('core.manage', 'com_libros'))
 {
