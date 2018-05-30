@@ -5,6 +5,7 @@ class LibrosViewLibros extends JViewLegacy
 {
     
     protected $items;
+    protected $state;
 
     public function display($tpl = null)
     {
@@ -12,6 +13,7 @@ class LibrosViewLibros extends JViewLegacy
         Funciones::mostrarZona(__CLASS__,__METHOD__,"Display",1);
         
         $this->items = $this->get('Items');
+        $this->state = $this->get('State');
 
         Funciones::mostrarZona(__CLASS__,__METHOD__,$this->items,1);
         
